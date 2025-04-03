@@ -2,6 +2,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.types import Message
+from decouple import config 
 
 from app.middlewares.keyboard import main_keyboard
 
