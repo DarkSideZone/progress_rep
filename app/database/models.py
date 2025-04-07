@@ -48,11 +48,11 @@ class Products(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True)
     price = Column(Integer, nullable=False)
-    category_id = Column(Integer, ForeignKey, ('categories.id'), nullable=True)
+    category_id = Column(Integer, ForeignKey('categories.id'), nullable=True)
 
     category = relationship("Category", back_populates="products")
-    stock_in_records = relationship("StockIn", back_populates="product")
-    stock_out_records = relationship("StockOut", back_populates="product")
+    # stock_in_records = relationship("StockIn", back_populates="product")
+    # stock_out_records = relationship("StockOut", back_populates="product")
 
 
 async def async_main():
